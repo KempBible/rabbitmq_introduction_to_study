@@ -1,0 +1,19 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: mq-rabbitmq-producer
+  rabbitmq:
+    host: 43.129.217.212
+    port: 5672
+    username: kemp
+    password: 201314
+    virtualHost: springbootVH
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 300000ms
+        multiplier: 2
+      exchange: topic.exchange
+    publisher-confirms: true
